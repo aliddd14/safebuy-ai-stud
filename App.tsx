@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Hero } from './components/Hero';
-import { ProblemSolution, HowItWorks, Features, TrustSection, WhoIsItFor, FeatureComparison } from './components/ContentSections';
+import { ProblemSolution, HowItWorks, Features, TrustSection, WhoIsItFor, FeatureComparison, FAQ } from './components/ContentSections';
 import { WaitlistForm } from './components/WaitlistForm';
 import { WaitlistModal } from './components/WaitlistModal';
 import { GlassCard, Badge } from './components/ui/Glass';
@@ -58,7 +58,7 @@ function App() {
                 </div>
                 <p className="text-slate-500 text-sm mb-6 h-10">For shoppers who want safety and savings without the hassle.</p>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-slate-900">$10.99</span>
+                  <span className="text-4xl font-bold text-slate-900">$14.99</span>
                   <span className="text-slate-500">/ month</span>
                 </div>
               </div>
@@ -191,6 +191,8 @@ function App() {
              We don't accept payment from sellers to boost their trust scores. Safety is our only metric.
            </p>
         </section>
+        
+        <FAQ />
 
         {/* Final CTA */}
         <section id="waitlist" className="py-32 px-4">

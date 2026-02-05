@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   AlertOctagon, CheckCircle, Search, Shield, Zap, Lock, 
   Eye, TrendingUp, Users, ShoppingBag, Laptop, CreditCard,
-  XCircle, FileSearch, Check, X
+  XCircle, FileSearch, Check, X, HelpCircle
 } from 'lucide-react';
 import { GlassCard, Badge } from './ui/Glass';
 import { Feature, Step } from '../types';
@@ -297,7 +297,7 @@ export const FeatureComparison: React.FC = () => {
             <thead>
               <tr className="border-b border-slate-200/60 bg-white/40">
                 <th className="py-4 px-6 text-sm font-semibold text-slate-500 uppercase tracking-wider w-2/5">Feature</th>
-                <th className="py-4 px-6 text-center text-slate-900 font-bold w-[30%]">Starter ($10.99)</th>
+                <th className="py-4 px-6 text-center text-slate-900 font-bold w-[30%]">Starter ($14.99)</th>
                 <th className="py-4 px-6 text-center text-slate-900 font-bold w-[30%] bg-blue-50/30">Pro ($29.99)</th>
               </tr>
             </thead>
@@ -313,6 +313,37 @@ export const FeatureComparison: React.FC = () => {
           </table>
         </div>
       </GlassCard>
+    </section>
+  );
+};
+
+export const FAQ: React.FC = () => {
+  const faqs = [
+    { q: "What is SafeBuy AI?", a: "SafeBuy AI finds the cheapest and safest place to buy the exact same product online — and warns you before you click risky deals." },
+    { q: "How is this different from Google?", a: "Google shows links. SafeBuy AI checks prices + seller safety and ranks the safest deals first." },
+    { q: "Does it show scam websites?", a: "No. Risky sellers are flagged clearly, with explanations so you know why a deal is unsafe." },
+    { q: "Is SafeBuy AI free?", a: "SafeBuy AI launches with Starter and Pro plans. Waitlist users get early access and discounted pricing." },
+    { q: "Why should I join the waitlist?", a: "✔ Early access\n✔ Lower pricing\n✔ Priority features\n✔ No spam\nJoining is free." },
+    { q: "When will it launch?", a: "Soon. Waitlist members get access first, in limited batches." },
+    { q: "Do you sell my data?", a: "Never. No data selling. No hidden tracking. No manipulation." },
+    { q: "Can SafeBuy AI guarantee safety?", a: "No tool can guarantee behavior — but SafeBuy AI warns you before risk, so you buy smarter." },
+    { q: "Who is this for?", a: "Anyone who wants safe deals, not scams — especially for electronics and expensive items." }
+  ];
+
+  return (
+    <section className="py-24 px-4 max-w-5xl mx-auto">
+      <div className="text-center mb-16">
+        <Badge>FAQ</Badge>
+        <h2 className="text-3xl font-bold text-slate-900 mt-4">Quick Answers</h2>
+      </div>
+      <div className="grid md:grid-cols-2 gap-6">
+        {faqs.map((item, i) => (
+           <GlassCard key={i} className="p-6">
+             <h3 className="text-lg font-bold text-slate-900 mb-2">{item.q}</h3>
+             <div className="text-slate-600 text-sm leading-relaxed whitespace-pre-line">{item.a}</div>
+           </GlassCard>
+        ))}
+      </div>
     </section>
   );
 };
